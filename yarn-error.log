@@ -1,0 +1,36 @@
+Arguments: 
+  D:\Nodejs\node.exe D:\Yarn\bin\yarn.js init
+
+PATH: 
+  C:\Users\19741\bin;D:\cmder\bin;D:\cmder\vendor\bin;D:\cmder\vendor\git-for-windows\bin;D:\cmder\vendor\git-for-windows\usr\local\bin;D:\cmder\vendor\git-for-windows\usr\bin;D:\cmder\vendor\git-for-windows\usr\bin;D:\cmder\vendor\git-for-windows\opt\bin;D:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\cmder\vendor\conemu-maximus5;D:\cmder\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;D:\Nodejs;D:\Yarn\bin;D:\cmder;D:\Git\cmd;C:\Users\19741\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\19741\AppData\Roaming\npm;C:\Users\19741\AppData\Local\Yarn\bin;D:\cmder;D:\cmder\vendor\git-for-windows\usr\bin\vendor_perl;D:\cmder\vendor\git-for-windows\usr\bin\core_perl
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (D:\Yarn\lib\cli.js:137145:13)
+      at Interface.emit (node:events:390:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:390:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:390:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
