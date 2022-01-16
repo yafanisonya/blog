@@ -29,20 +29,24 @@ title: 简历
 
     主要技术栈： **Vue3 / TypeScript / VuePress / Vue Router / Vite / SCSS / ES6 / Parcel**
 
-2.  ### 极简记账 （）
+2.  ### 极简记账 （记账应用）
 
 [ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ Vue 源码 ](https://github.com/yafanisonya/ledger)　
 [ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/) 　[ React 源码](https://github.com/yafanisonya/react_morney)
 
-    一个基于 **Vue** 和 **TypeScript** 的移动端单页面应用。
+    一个移动端记账应用，包含**标签、记账、统计** 等页面，实现了记账、标签管理、查看收支详情等功能
 
-    该项目以 Vue CLI 为基础创建项目模板，使用 SCSS 作 **预处理**，通过 Vue Router 实现**路由跳转**，使用 LocalStorage 实现数据**本地储存**，通过 Vuex 实现**状态管理**。
+    使用 **Vue** 、 **React** 分别实现了一遍，让自己熟悉两个常用框架的使用
 
-    包含**标签、记账、统计** 等页面，实现了记账、标签管理、查看收支详情等功能。
+    使用 SCSS 作 **预处理**，React 使用 Styled Components 插件,实现 CSS in JS
 
-    这是我从自己的需求出发，采用黑白灰配色设计的极简记账应用，在实现过程中遇到了很多 Webpack、TypeScript 方面的问题，并将解决的过程记录在[个人博客](null)。
+    通过 Vuex、 自定义 Hooks 实现组件数据的**状态管理**, 使用 LocalStorage 实现数据**本地储存**
 
-    主要技术栈： **Vue / Vue Router / Vuex / TypeScript / SCSS**
+    在实现过程中遇到了很多 Webpack、TypeScript、 Hooks API 方面的问题，并将解决的过程记录在[个人博客]。
+
+    Vue版本技术栈：**Vue / Vue Router / Vuex / TypeScript**
+
+    React版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
 
 3.  ### [#](#迷你导航) 迷你导航
 
