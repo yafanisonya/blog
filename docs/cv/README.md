@@ -63,7 +63,11 @@ title: 简历
 
     React版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
 
-3.  ### [#](#迷你导航) 迷你导航
+3. ### 后台管理
+
+## 开源项目
+
+### 迷你导航
 
     [源码链接](https://github.com/yafanisonya/nav) [项目预览](http://fanison.xyz/nav/)
 
@@ -74,8 +78,6 @@ title: 简历
     在学习时为了更方便快速地查阅资料，于是设计了一个能自定义收藏网站标签的导航项目。
 
     主要技术栈： **jQuery / LocalStorage / SVG Symbols / 媒体查询 / git &amp; GitHub**
-
-## 开源项目
 
 - ### 会动的皮卡丘
 
@@ -92,9 +94,11 @@ title: 简历
 ## 技能
 
 - 能够使用 HTML5 和 CSS3 进行符合 Web 标准的语义化开发，具有**像素级还原设计稿**的能力
-- 熟悉 JavaScript,理解**原型、闭包、作用域链、跨域、防抖、节流**等重要概念
-- 熟悉 **ES6** ，包括 let / Promise / 箭头函数 / 析构赋值 / 展开语法等
-- 熟悉 Vue 常用功能，能够使用**Vue 全家桶**进行开发,包括 VueCli、VueRouter、Vuex 等
-- 熟悉版本管理工具**Git**，熟悉**MarkDown**语法，能用其编写技术文档
-- 熟悉 Less、Scss 等 CSS 预处理后处理工具
--
+- 熟悉 JavaScript 、 ES6+ 语法， 具有 TypeScript / Less / Sass 等扩展语言开发经验
+- 熟悉 Vue 常用功能，能够使用 Vue 全家桶进行开发,包括 VueCli、VueRouter、Vuex 等
+- 熟悉 React 框架，理解重要概念(生命周期、异步更新、常用 hook、单项数据流)；了解 Redux store 设计实践，通过 React-Router 进行页面内容分发
+- 熟练使用 Ant Design / Element 等 UI 框架完成业务组件，具有相关项目经验
+- 了解 Node.js 常用模块，能用 Express / Koa 等框架搭建基础的 Web 服务
+- 熟练使用 Git 进行版本控制和代码托管, Markdown 编写技术文档
+- 熟悉前端工程化构建流程，使用 Webpack / Parcel 等打包工具
+- 掌握项目常规开发流程，能够独立进行前端页面代码开发
