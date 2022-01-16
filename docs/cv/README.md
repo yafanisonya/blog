@@ -4,31 +4,35 @@ title: 简历
 
 # 孙雅凡
 
-男 | 24 岁 | 前端开发工程师 | 北京
+男 | 26 岁 | 前端开发工程师 | 北京
 
-手机：13121300609 | 微信：fanison_ya | 邮箱：yafanison@foxmail.com
+手机：18332716172 | 微信：fanison_ya | 邮箱：yafanison@gmail.com
 
-- [个人主页](https://fanison.gitee.io/learningNotes)，记录我的学习点滴
-- [我的博客](https://www.jianshu.com/u/f2a2f0b5a047)，目前已有 62 篇技术文章
+- [个人主页](https://yafanisonya.github.io/blog/)
+- [Github](https://github.com/yafanisonya)
 
 ## 项目经历
 
-1.  ### Wheel UI
+1.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
 
-    [源码链接](https://github.com/yafanisonya/wheel) [项目预览](http://fanison.xyz/wheel/)
+[Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)　
+[ Vue3 源码 ](https://github.com/yafanisonya/wheelv3)
+　[ Vue2 源码 ](https://github.com/yafanisonya/wheel)
 
     该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue** 的 UI 框架。
 
-    主要组件有 Button、文本输入框、Toast、标签、手风琴等。
+    项目分别使用 Vue3、Vue2 两个版本实现不同的组件功能。
 
-    每个组件均经历**需求分析**到以 VuePress 为基础**制作官方文档**，完成该项目使我对 Vue 的常用特征更加熟悉，同时加深了自己对**前端工程化**的理解。
+    主要组件有 Switch、Button、Dialog、Tabs、文本输入框、Toast、标签、手风琴等。
 
-    主要技术栈： **Vue / VuePress / SCSS / ES6 / Parcel**
+    每个组件均经历**需求分析**到 **制作官方文档** 的过程，完成该项目使我对 Vue 的常用特征更加熟悉，同时加深了自己对**前端工程化**的理解。
 
-2.  ### 极简记账
+    主要技术栈： **Vue3 / TypeScript / VuePress / Vue Router / Vite / SCSS / ES6 / Parcel**
 
-    [源码链接](https://gitee.com/fanison/ledger-website)
-    [项目预览](http://fanison.gitee.io/ledger-website/#/money)
+2.  ### 极简记账 （）
+
+[ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ Vue 源码 ](https://github.com/yafanisonya/ledger)　
+[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/) 　[ React 源码](https://github.com/yafanisonya/react_morney)
 
     一个基于 **Vue** 和 **TypeScript** 的移动端单页面应用。
 
