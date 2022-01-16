@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/blog',
+  base: '/blog/',
   title: `Fanison's Blog`,
   description: 'Keep Learning, Keep Growing, Keep Succeeding',
   themeConfig: {
