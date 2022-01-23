@@ -17,6 +17,13 @@ title: 简历
 
     2020 年 8 月 ~ 至今
 
+    - 参与公司项目线业务开发, 独立承担完成部分项目开发全流程
+    - 根据项目需求及 UI，完成项目技术选型、框架搭建、页面开发到打包、部署完整流程
+    - 5G 智慧银行项目以 Vue 为核心技术栈，基于 vue-cli 脚手架，使用 Webpack 完成打包构建
+    - 与建行成开数据中心后端对接接口数据, 以生产网部署的方式完成项目运行
+    - 云观网点画像基于 Ant Design 框架, 以 React 为技术栈，配合高德地图 API 实现数据化网点选址
+    - 后期维护解决项目运行中出现的 bug 及新的需求功能开发
+
 2.  ### 北京易连忆生科技有限公司
 
     2020 年 3 月 ~ 2020 年 7 月
@@ -28,7 +35,19 @@ title: 简历
 
 ## 项目经历
 
-1.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
+1.  ### 小象云观网点画像
+
+    项目为网点选址、数据营销等提供多维度预测性数据, 以 React 为技术栈, 基于 Ant Design 框架
+
+    模块主要分为电子地图、城市数据展示、区域工商明细、网点数据分析等
+
+    基于高德地图 API 实现区域筛选及选址分析, 热力图辅助展示网点周边客群画像
+
+    采用 Echarts 进行数据可视化展示, 实现对网点周边综合分析与对比
+
+    与后端对接, 实现多个目标网点数据对比及报告输出功能
+
+2.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
 
 [Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)　
 [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3)
@@ -44,7 +63,7 @@ title: 简历
 
     主要技术栈： **Vue3 / TypeScript / VuePress / Vue Router / Vite / SCSS / ES6 / Parcel**
 
-2.  ### 极简记账 （记账应用）
+3.  ### 极简记账 （记账应用）
 
 [ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ Vue 源码 ](https://github.com/yafanisonya/ledger)　
 [ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/) 　[ React 源码](https://github.com/yafanisonya/react_morney)
@@ -62,8 +81,6 @@ title: 简历
     Vue版本技术栈：**Vue / Vue Router / Vuex / TypeScript**
 
     React版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
-
-3. ### 后台管理
 
 ## 开源项目
 
