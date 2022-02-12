@@ -6,10 +6,23 @@ title: 简历
 
 男 | 26 岁 | 前端开发工程师 | 北京
 
-手机：18332716172 | 微信：fanison_ya | 邮箱：yafanison@gmail.com
+手机：13141411566 | 微信：yafan0609 | 邮箱：yafanison@gmail.com
 
 - [个人主页](https://yafanisonya.github.io/blog/)
 - [Github](https://github.com/yafanisonya)
+
+## 专业技能
+
+- 掌握项目常规开发流程，能够独立进行前端页面代码开发
+- 熟悉 HTML5、 CSS3, 确保代码符合前端规范，具有像素级还原设计稿的能力
+- 熟悉 JavaScript、 ES6+ 语法, 具有 TypeScript / Less / Sass 等扩展语言开发经验
+- 熟悉 Vue 常用功能，能够使用 Vue 全家桶进行开发,包括 VueCli、VueRouter、Vuex 等
+- 熟悉微信小程序从开发到发布全流程, 独立承担从零到一小程序开发
+- 熟悉 React 框架，理解重要概念(生命周期、异步更新、常用 hook、单项数据流)
+- 熟练使用 Ant Design / Element 等 UI 框架完成业务组件，具有相关项目经验
+- 熟练使用 Git 进行版本控制和代码托管, Markdown 编写技术文档
+- 熟悉前端工程化构建流程，使用 Webpack / Parcel 等打包工具
+<!-- - 了解 Node.js 常用模块，能用 Express / Koa 等框架搭建基础的 Web 服务 -->
 
 ## 工作经历
 
@@ -22,6 +35,7 @@ title: 简历
     - 5G 智慧银行项目以 Vue 为核心技术栈，基于 vue-cli 脚手架，使用 Webpack 完成打包构建
     - 与成开数据中心后端对接接口数据, 以生产网部署的方式完成项目运行
     - 后期维护解决项目运行中出现的 bug 及新的需求功能开发
+
     <!-- - 云观网点画像基于 Ant Design 框架, 以 React 为技术栈，配合高德地图 API 实现数据化网点选址 -->
 
 2.  ### 北京易连忆生科技有限公司
@@ -49,7 +63,7 @@ title: 简历
 
 2.  ### 小象规划+ (小程序)
 
-    项目为银行理财经理提供用户资产配置方案, 基于小程序技术栈
+    项目为银行理财经理提供用户资产配置方案, 基于微信小程序原生框架
 
     模块主要分为模式选择、客户评测、方案推荐、资产分析、模拟配置等
 
@@ -59,9 +73,9 @@ title: 简历
 
 3.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
 
-[Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)　
-[ Vue3 源码 ](https://github.com/yafanisonya/wheelv3)
-　[ Vue2 源码 ](https://github.com/yafanisonya/wheel)
+[Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)
+
+<!-- [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3) 　[ Vue2 源码 ](https://github.com/yafanisonya/wheel) -->
 
     该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue** 的 UI 框架。
 
@@ -75,8 +89,9 @@ title: 简历
 
 3.  ### 极简记账 （记账应用）
 
-[ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ Vue 源码 ](https://github.com/yafanisonya/ledger)　
-[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/) 　[ React 源码](https://github.com/yafanisonya/react_morney)
+[ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/)
+
+<!-- [ Vue 源码 ](https://github.com/yafanisonya/ledger)　 　[ React 源码](https://github.com/yafanisonya/react_morney) -->
 
     一个移动端记账应用，包含**标签、记账、统计** 等页面，实现了记账、标签管理、查看收支详情等功能
 
@@ -112,20 +127,8 @@ title: 简历
 
   这是我在学习 **CSS3 和动画** 时制作的一个可爱作品
 
-- ### 简易画板
+<!-- - ### 简易画板
 
   [源码链接](https://github.com/yafanisonya/canvas-demo) [项目预览](http://fanison.xyz/canvas-demo/)
 
-  我在学习 **Canvas** 时做的一个小作品
-
-## 技能
-
-- 能够使用 HTML5 和 CSS3 进行符合 Web 标准的语义化开发，具有**像素级还原设计稿**的能力
-- 熟悉 JavaScript 、 ES6+ 语法， 具有 TypeScript / Less / Sass 等扩展语言开发经验
-- 熟悉 Vue 常用功能，能够使用 Vue 全家桶进行开发,包括 VueCli、VueRouter、Vuex 等
-- 熟悉 React 框架，理解重要概念(生命周期、异步更新、常用 hook、单项数据流)；了解 Redux store 设计实践，通过 React-Router 进行页面内容分发
-- 熟练使用 Ant Design / Element 等 UI 框架完成业务组件，具有相关项目经验
-- 了解 Node.js 常用模块，能用 Express / Koa 等框架搭建基础的 Web 服务
-- 熟练使用 Git 进行版本控制和代码托管, Markdown 编写技术文档
-- 熟悉前端工程化构建流程，使用 Webpack / Parcel 等打包工具
-- 掌握项目常规开发流程，能够独立进行前端页面代码开发
+  我在学习 **Canvas** 时做的一个小作品 -->
