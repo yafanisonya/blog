@@ -22,7 +22,6 @@ title: 简历
 - 熟练使用 Ant Design / Element 等 UI 框架完成业务组件，具有相关项目经验
 - 熟练使用 Git 进行版本控制和代码托管, Markdown 编写技术文档
 - 熟悉前端工程化构建流程，使用 Webpack / Parcel 等打包工具
-<!-- - 了解 Node.js 常用模块，能用 Express / Koa 等框架搭建基础的 Web 服务 -->
 
 ## 工作经历
 
@@ -33,17 +32,15 @@ title: 简历
     - 参与公司项目线业务开发, 独立承担完成部分项目开发全流程
     - 根据项目需求及 UI，完成项目技术选型、框架搭建、页面开发到打包、部署完整流程
     - 5G 智慧银行项目以 Vue 为核心技术栈，基于 vue-cli 脚手架，使用 Webpack 完成打包构建
-    - 与成开数据中心后端对接接口数据, 以生产网部署的方式完成项目运行
+    - 与成开数据中心对接接口数据, 以生产网部署的方式完成项目运行
     - 后期维护解决项目运行中出现的 bug 及新的需求功能开发
-
-    <!-- - 云观网点画像基于 Ant Design 框架, 以 React 为技术栈，配合高德地图 API 实现数据化网点选址 -->
 
 2.  ### 北京易连忆生科技有限公司
 
     2020 年 3 月 ~ 2020 年 7 月
 
     - 配合 UI 和后端，根据产品需求，开发移动端页面
-    - 优化页面适配，前期基于 rem 伸缩布局方案，后期过渡到 vw、flex 布局
+    - 优化页面适配，前期基于 rem 布局，后期过渡到 vw、flex 布局
     - 使用 ECharts 等可视化技术开发数据图表，动态展示学生数据各项指标
     - 同期工作之余提升自己 JS 的编码能力
 
@@ -73,9 +70,9 @@ title: 简历
 
 3.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
 
-[Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)
+    [Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)
 
-<!-- [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3) 　[ Vue2 源码 ](https://github.com/yafanisonya/wheel) -->
+    <!-- [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3) 　[ Vue2 源码 ](https://github.com/yafanisonya/wheel) -->
 
     该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue** 的 UI 框架。
 
@@ -87,11 +84,11 @@ title: 简历
 
     主要技术栈： **Vue3 / TypeScript / VuePress / Vue Router / Vite / SCSS / ES6 / Parcel**
 
-3.  ### 极简记账 （记账应用）
+4.  ### 极简记账 （记账应用）
 
-[ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/)
+    [ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/)
 
-<!-- [ Vue 源码 ](https://github.com/yafanisonya/ledger)　 　[ React 源码](https://github.com/yafanisonya/react_morney) -->
+    <!-- [ Vue 源码 ](https://github.com/yafanisonya/ledger)　 　[ React 源码](https://github.com/yafanisonya/react_morney) -->
 
     一个移动端记账应用，包含**标签、记账、统计** 等页面，实现了记账、标签管理、查看收支详情等功能
 
@@ -103,29 +100,29 @@ title: 简历
 
     在实现过程中遇到了很多 Webpack、TypeScript、 Hooks API 方面的问题，并将解决的过程记录在[个人博客]。
 
-    Vue版本技术栈：**Vue / Vue Router / Vuex / TypeScript**
+    Vue 版本技术栈：**Vue / Vue Router / Vuex / TypeScript**
 
-    React版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
+    React 版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
 
 ## 开源项目
 
-### 迷你导航
+- ### 迷你导航
 
-    [源码链接](https://github.com/yafanisonya/nav) [项目预览](http://fanison.xyz/nav/)
+  [源码链接](https://github.com/yafanisonya/nav) [项目预览](http://fanison.xyz/nav/)
 
-    一个基于 **jQuery** / **JavaScript** 的单页面应用。
+  一个基于 **jQuery** / **JavaScript** 的单页面应用
 
-    该项目使用 jQuery 实现手机端**事件监听和 DOM 操作**，通过**媒体查询**和 CSS 实现 PC 端布局。
+  该项目使用 jQuery 实现手机端**事件监听和 DOM 操作**，通过**媒体查询**和 CSS 实现 PC 端布局
 
-    在学习时为了更方便快速地查阅资料，于是设计了一个能自定义收藏网站标签的导航项目。
+  在学习时为了更方便快速地查阅资料，于是设计了一个能自定义收藏网站标签的导航项目
 
-    主要技术栈： **jQuery / LocalStorage / SVG Symbols / 媒体查询 / git &amp; GitHub**
+  主要技术栈： **jQuery / LocalStorage / SVG Symbols / 媒体查询 / git &amp; GitHub**
 
 - ### 会动的皮卡丘
 
   [源码链接](https://github.com/yafanisonya/pikachu) [项目预览](http://fanison.xyz/pikachu/src/test.html)
 
-  这是我在学习 **CSS3 和动画** 时制作的一个可爱作品
+  **CSS3 和动画** 制作的一个创意可爱作品
 
 <!-- - ### 简易画板
 
