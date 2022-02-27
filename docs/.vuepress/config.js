@@ -17,15 +17,14 @@ module.exports = {
           '/cv/',
         ]
       },
-      // {
-      //   title: 'Vue.js',
-      //   collapsable: false,
-      //   children: [
-      //     '/Vue/',
-      //     '/Vue/Vuex.md',
-      //     '/Vue/Vue-Router.md',
-      //   ]
-      // }
+      {
+        title: 'HTML',
+        collapsable: false,
+        children: [
+          '/html/html01',
+          '/html/html02',
+        ]
+      }
     ]
   }
 }

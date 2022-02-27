@@ -120,7 +120,7 @@ title: 简历
 
 - ### 会动的皮卡丘
 
-  [源码链接](https://github.com/yafanisonya/pikachu) [项目预览](http://fanison.xyz/pikachu/src/test.html)
+  [源码链接](https://github.com/yafanisonya/pikachu) [项目预览](https://yafanisonya.github.io/pikachu/src/test.html)
 
   **CSS3 和动画** 制作的一个创意可爱作品
 
