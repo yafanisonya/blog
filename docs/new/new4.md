@@ -1,4 +1,10 @@
+---
+title: TypeScript
+---
+
 ### TypeScript
+
+#### 什么是 TypeScript
 
 - TypeScript 是 JavaScript 的超集，扩展了 JavaScript 的语法
 - TypeScript 通过类型注解提供编译时的静态类型检查
@@ -12,7 +18,7 @@ const hello = (name: any) => {
 hello('TypeScript')
 ```
 
-#### 原始数据类型
+##### 原始数据类型
 
 ```
 const a: string = 'foobar'
@@ -24,7 +30,7 @@ const g: undefined = undefined
 const h: symbol = Symbol()
 ```
 
-#### Object 类型
+##### Object 类型
 
 ```
 const foo1: object = function(){}
@@ -33,7 +39,7 @@ const foo2: { foo: number, bar: string} = { foo: 123, bar: 'string'}
 
 ```
 
-#### 数组类型
+##### 数组类型
 
 ```
 const arr1: Array<number> = [1, 2, 3]
@@ -42,7 +48,7 @@ const arr2: number[] = [1, 2, 3]
 
 ```
 
-#### 元组 Tuple
+##### 元组 Tuple
 
 ```
 const tuple1: [number, string] = [19, 'fanison']
@@ -56,7 +62,7 @@ const [key, value] = entries[0]
 // key => foo, value => 123
 ```
 
-#### 枚举 Enum
+##### 枚举 Enum
 
 ```
 enum PostStatus {
@@ -66,7 +72,7 @@ enum PostStatus {
 }
 ```
 
-#### 函数类型
+##### 函数类型
 
 ```
 function func1(a: number, b: number): string{
@@ -79,7 +85,7 @@ const func2: (a: number, b: number) => string = function(a: number, b:number): s
 
 ```
 
-#### 任意类型
+##### 任意类型
 
 ```
 function stringify(value: any){
@@ -88,14 +94,14 @@ function stringify(value: any){
 
 ```
 
-#### 隐式类型推断
+##### 隐式类型推断
 
 ```
 let age = 19 // number
 let foo = 'str' // string
 ```
 
-#### 类型断言
+##### 类型断言
 
 ```
 const nums = [110, 120, 130, 140]
@@ -106,7 +112,7 @@ const num1 = res as number
 const num2 = <number>res
 ```
 
-#### 接口
+##### 接口
 
 ```
 interface Post{
@@ -135,7 +141,7 @@ const cache: Cache = {}
 cache.foo = 'value1'
 ```
 
-#### 类
+##### 类
 
 ```
 class Person {
@@ -153,7 +159,7 @@ sayHi(msg: string): void{
 }
 ```
 
-#### 类与接口
+##### 类与接口
 
 - 类使用 implements 关键字实现多个接口
 
@@ -177,7 +183,7 @@ class Person implements Eat, Run {
 }
 ```
 
-#### 抽象类
+##### 抽象类
 
 - 定义一个抽象类，并定义一个抽象方法
 - 抽象类中的抽象方法必须被子类实现
@@ -200,7 +206,7 @@ const d1 = new Dog()
 d.run(200)
 ```
 
-#### 泛型
+##### 泛型
 
 ```
 function createNumber(length: number, value: number): number[] {

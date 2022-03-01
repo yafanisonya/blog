@@ -1,14 +1,18 @@
-Vuex 状态管理
+---
+title: Vuex 状态管理
+---
 
-### 状态管理组成
+### Vuex 状态管理
+
+#### 状态管理组成
 
 - state： 驱动应用的数据源
 - view： 以声明方式 将 state 映射到视图
 - actions： 响应在 view 上的用户输入导致的状态变化
 
-### 组件通信方式
+#### 组件通信方式
 
-#### 父子传值： props
+##### 父子传值： props
 
 ```
 <child title="value from parent"></child>
@@ -19,7 +23,7 @@ Vue.component('child',{
 })
 ```
 
-#### 子传父： $emit
+##### 子传父： $emit
 
 ```
 // 子组件使用 $emit 发布自定义事件
@@ -29,7 +33,7 @@ Vue.component('child',{
 <child v-on:enlargeText="fontsize += $event"></child>
 ```
 
-#### Event Bus
+##### Event Bus
 
 ```
 // eventbus.js
@@ -47,7 +51,7 @@ bus.$emit('自定义事件')
 bus.$emit('自定义事件', 数据)
 ```
 
-#### 父通过 ref 获取子组件
+##### 父通过 ref 获取子组件
 
 ```
 // 父组件内容
@@ -64,7 +68,7 @@ data(){
 }
 ```
 
-### Vuex
+#### Vuex
 
 - 专门为 Vue.js 设计的状态管理库
 - 采用集中式的方式存储需要共享的数据
@@ -74,7 +78,7 @@ data(){
 - 多个视图依赖于同一状态
 - 来自不同视图的行为需要变更同一状态
 
-#### 基本结构
+##### 基本结构
 
 ```
 // 导入 Vuex
@@ -98,7 +102,7 @@ new Vue({
 }).$mount('#app')
 ```
 
-#### State
+##### State
 
 Vuex 使用单一状态树，用一个对象就包含了全部的应用层级状态
 使用 mapState 简化 State 在视图中的使用， mapState 返回计算属性
@@ -136,7 +140,7 @@ computed: {
 }
 ```
 
-#### Getter
+##### Getter
 
 Getter 就是 store 中的计算属性， 使用 mapGetter 简化视图中的使用
 
@@ -170,7 +174,7 @@ export default {
 }
 ```
 
-#### Mutation
+##### Mutation
 
 - 更改 Vuex 的 store 中的状态的唯一方法是 提交 mutation
 - mutation 必须是同步函数
@@ -205,7 +209,7 @@ export default {
 }
 ```
 
-#### Action
+##### Action
 
 - Action 提交的是 mutation，而不是直接变更状态
 - Action 可以包含任意异步操作
@@ -251,7 +255,7 @@ export default{
 }
 ```
 
-#### Module
+##### Module
 
 - 将 store 分割成模块， 每个模块拥有自己的 state、 mutation、 action、 getter， 甚至嵌套子模块
 
@@ -292,7 +296,7 @@ export default{
 }
 ```
 
-#### 插件
+##### 插件
 
 - Vuex 插件就是一个函数， 接收 store 作为唯一参数
 - Store 接受 plugins 选项，这个选项暴露出每次 mutation 的钩子

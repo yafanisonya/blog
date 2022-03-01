@@ -18,6 +18,17 @@ module.exports = {
         ]
       },
       {
+        title: '深入浅出',
+        collapsable: false,
+        children: [
+          '/new/new1',
+          '/new/new2',
+          '/new/new3',
+          '/new/new4',
+          '/new/new5'
+        ]
+      },
+      {
         title: 'HTML',
         collapsable: false,
         children: [

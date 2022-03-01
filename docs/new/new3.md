@@ -1,6 +1,10 @@
-异步编程
+---
+title: 异步编程
+---
 
-### 同步模式
+### 异步编程
+
+#### 同步模式
 
 ```
 console.log('global start')
@@ -25,7 +29,7 @@ bar task
 global end
 ```
 
-### 异步模式
+#### 异步模式
 
 ![异步模式](https://i.imgur.com/KEeOg6m.png)
 
@@ -54,7 +58,7 @@ timer1 invoke
 inner invoke
 ```
 
-### 回调函数
+#### 回调函数
 
 ```
 function foo(callback){
@@ -69,11 +73,11 @@ foo(function(){
 })
 ```
 
-### Promise
+#### Promise
 
 ![Promise](https://i.imgur.com/FRD0dFV.png)
 
-#### 基本示例
+##### 基本示例
 
 ```
 const promise = new Promise(function (reslove, reject){
@@ -88,7 +92,7 @@ promise.then(function (value){
 })
 ```
 
-#### 封装 AJAX
+##### 封装 AJAX
 
 ```
 function ajax(url){
@@ -114,7 +118,7 @@ ajax('/api/first.json').then( function (res){
 })
 ```
 
-#### 链式调用
+##### 链式调用
 
 ```
 ajax('/api/users.json')
@@ -126,7 +130,7 @@ ajax('/api/users.json')
   })
 ```
 
-#### 异常处理
+##### 异常处理
 
 ```
 // 因为 Promise 链条上的任何一个异常都会被一直向后传递，直至捕获
@@ -160,7 +164,7 @@ ajax('/api/users.json')
     })
 ```
 
-#### All、Race
+##### All、Race
 
 - Promise.all()中的 Promise 全部执行通过才认为是成功，否则认为是失败；
 - Promise.race()中的 Promise 中第一个执行完毕的是通过，则认为成功，如果第一个执行完毕的 Promise 是拒绝，则认为失败；
@@ -188,7 +192,7 @@ Promise.race([
 })
 ```
 
-#### 执行顺序
+##### 执行顺序
 
 ```
 // 微任务
@@ -217,7 +221,7 @@ console.log('global end')
 // global start, global end, promise, promise 2, promise 3, setTimeout
 ```
 
-### Generator
+#### Generator
 
 - Generator 函数可以暂停执行， 在函数名前要加星号
 - value 是 yield 语句后面表达式的值，表示当前阶段的值；
@@ -250,7 +254,7 @@ generator.next('bar') // bar
 generator.throw(new Error('Generator error'))
 ```
 
-### Async、Await
+#### Async、Await
 
 - async 函数返回一个 Promise 对象，可以使用 then 方法添加回调函数
 - 当函数执行时，一旦遇到 await 就会先返回
