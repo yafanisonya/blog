@@ -29,11 +29,10 @@ module.exports = {
         ]
       },
       {
-        title: 'HTML',
+        title: '前端',
         collapsable: false,
         children: [
-          '/html/html01',
-          '/html/html02',
+          '/frontend/fr1.md'
         ]
       }
     ]
