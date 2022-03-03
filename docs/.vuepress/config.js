@@ -22,7 +22,9 @@ module.exports = {
         collapsable: false,
         children: [
           '/frontend/fr1.md',
-          '/frontend/fr2.md'
+          '/frontend/fr2.md',
+          '/frontend/fr3.md',
+          '/frontend/fr4.md',
         ]
       },
       {
