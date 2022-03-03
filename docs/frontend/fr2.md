@@ -1,0 +1,267 @@
+---
+title: JS进阶
+---
+
+### JS 进阶
+
+#### 类数组转换数组
+
+**类数组**
+
+- 用 getElementsByTagName/ClassName()获得的 HTMLCollection
+- 用 querySelector 获得的 nodeList
+
+> 转换成数组
+
+```
+Array.prototype.slice.call()
+Array.from()
+
+
+[...arguments]     // ES6展开运算符
+ Array.prototype.concat.apply([], arguments);
+```
+
+#### 判断数组中是否包含某个值
+
+> indexOf、include、find、findIndex
+
+```
+var arr=[1,2,3,4];
+
+array.indexOf
+// 判断数组中是否存在某个值，如果存在，则返回数组元素的下标，否则返回-1
+
+array.includes(searcElement[,fromIndex])
+// 判断数组中是否存在某个值，如果存在返回true，否则返回false
+
+array.find(callback[,thisArg])
+// 返回数组中满足条件的第一个元素的值，如果没有，返回undefined
+
+array.findIndex(callback[,thisArg])
+// 返回数组中满足条件的第一个元素的下标，如果没有找到，返回-1
+```
+
+#### 对象转原始类型流程
+
+> 对象转原始类型，会调用内置的[ToPrimitive]函数
+
+- 如果 Symbol.toPrimitive()方法，优先调用再返回
+- 调用 valueOf()，如果转换为原始类型，则返回
+- 调用 toString()，如果转换为原始类型，则返回
+- 如果都没有返回原始类型，会报错
+
+```
+var obj = {
+  value: 3,
+  valueOf() {
+    return 4;
+  },
+  toString() {
+    return '5'
+  },
+  [Symbol.toPrimitive]() {
+    return 6
+  }
+}
+console.log(obj + 1); // 输出7
+```
+
+> 如何让 if(a == 1 && a == 2)条件成立？
+
+```
+var a = {
+  value: 0,
+  valueOf: function() {
+    this.value++;
+    return this.value;
+  }
+};
+console.log(a == 1 && a == 2);//true
+```
+
+#### Generator
+
+**异步编程**
+
+- function 关键字与函数名之间有一个星号 "\*"
+- 函数体内使用 yield 表达式，定义不同的内部状态 （可以有多个 yield）
+- 直接调用 Generator 函数并不会执行，也不会返回运行结果，而是返回一个遍历器对象（Iterator Object）
+- 依次调用遍历器对象的 next 方法，遍历 Generator 函数内部的每一个状态
+
+```
+function * foo(){
+  yield 'status one'
+  return 'hello world'
+}
+
+let iterator = foo()
+// value 表示返回值，done 表示遍历状态
+iterator.next()    // {value: 'status one', done: false}
+iterator.next()    // {value: 'hello world', done: true}
+
+function * foo2(){
+  console.log('111')
+  yield 100
+  console.log('222')
+  yield 200
+  console.log('333')
+  yield 300
+}
+const generator = foo2()
+generator.next()   // {value: 100, done: false}
+generator.next()   // {value: 200, done: false}
+generator.next()   // {value: 300, done: false}
+generator.next()   // {value: undefined, done: true}
+```
+
+#### async、await
+
+Generator 函数的语法糖：将 Generator 函数的星号（\*）替换成 async，将 yield 替换成 await
+async 函数返回一个 Promise 对象，可以使用 then 方法添加回调函数。当函数执行的时候，一旦遇到 await 就会先返回，等到异步操作完成，再接着执行函数体内后面的语句
+
+```
+async function getStockPriceByName(name) {
+  const symbol = await getStockSymbol(name);
+  const stockPrice = await getStockPrice(symbol);
+  return stockPrice;
+}
+
+getStockPriceByName('goog').then(function (result) {
+  console.log(result);
+});
+```
+
+#### Proxy
+
+- 创建一个对象的代理，从而实现基本操作的拦截和自定义
+- get 方法用于拦截某个属性的读取操作
+- set 方法用来拦截某个属性的赋值操作
+
+```
+const person = {
+  name: 'zce',
+  age: 20
+}
+
+const personProxy = new Proxy(person,{
+  // 监视属性读取
+  get(target, property){
+    return property in target ? target[property] : 'default'
+  },
+  // 监视属性设置
+  set(target, property, value){
+    if(property === 'age'){
+      if(!Number.isInteger(value)){
+        throw new TypeError(`${value} is not an int`)
+      }
+    }
+    target[property] = value
+  }
+})
+
+personProxy.gender = 'male'  // {name: 'zce', age: 20, gender: 'male'}
+```
+
+#### ES6 新特性
+
+- Let 声明的成员只会在所声明的块中生效，修复了变量声明提升现象
+- Const 要求声明同时赋值,过后不允许重新赋值
+- 模版字符串：反引号包裹，允许换行
+- 函数参数的默认值：一定是在形参列表的最后
+- 箭头函数
+- Class：使用 class 关键字声明类；函数声明会提升， 类声明不会提升
+- Extends 继承 ： class Student extends Person{｝
+- Object.assign：对象的合并，将源对象的所有可枚举属性，复制到目标对象
+- Object.is：判断两个值是否是相同的值
+
+```
+// 数组解构
+const arr = [1,2,3]
+const [foo, bar, baz] = arr    // 1,2,3
+
+// 对象解构
+const obj = {
+  name: 'zce'
+}
+const { name } = obj
+
+// forof  可以解决 forEach 无法直接跳出循环的问题
+for(const item of arr){
+  console.log(item)
+  if(item> 100){ break }
+}
+```
+
+#### JS 数组的高阶函数
+
+> 高阶函数：可以接收另一个函数作为参数或者返回值为一个函数
+
+##### map
+
+参数:接受两个参数，一个是回调函数，一个是回调函数的 this 值(可选)。
+其中，回调函数被默认传入三个值，依次为当前元素、当前索引、整个数组。
+
+- 创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
+- 对原来的数组没有影响
+
+```
+let nums = [1, 2, 3];
+let obj = {val: 5};
+let newNums = nums.map(function(item,index,array) {
+  return item + index + array[index] + this.val;
+  //对第一个元素，1 + 0 + 1 + 5 = 7
+  //对第二个元素，2 + 1 + 2 + 5 = 10
+  //对第三个元素，3 + 2 + 3 + 5 = 13
+}, obj);
+console.log(newNums);//[7, 10, 13]
+```
+
+##### reduce
+
+- 参数: 接收两个参数，一个为回调函数，另一个为初始值。回调函数中四个默认参数，依次为积累值、当前值、当前索引和整个数组。
+
+```
+let nums = [1, 2, 3];
+// 多个数的加和
+let newNums = nums.reduce(function(preSum,curVal,currentIndex,array) {
+  return preSum + curVal;
+}, 0);
+console.log(newNums);//6
+
+ // 不传默认值会自动以第一个元素为初始值，然后从第二个元素开始依次累计。
+```
+
+##### filter
+
+参数: 一个函数参数。这个函数接受一个默认参数，就是当前元素。这个作为参数的函数返回值为一个布尔类型，决定元素是否保留。
+filter 方法返回值为一个新的数组，这个数组里面包含参数里面所有被保留的项。
+
+```
+let nums = [1, 2, 3];
+// 保留奇数项
+let oddNums = nums.filter(item => item % 2);
+console.log(oddNums);
+```
+
+##### sort
+
+参数: 一个用于比较的函数，它有两个默认参数，分别是代表比较的两个元素。
+
+```
+let nums = [2, 3, 1];
+//两个比较的元素分别为a, b
+nums.sort(function(a, b) {
+  if(a > b) return 1;
+  else if(a < b) return -1;
+  else if(a == b) return 0;
+})
+```
+
+当比较函数返回值大于 0，则 a 在 b 的后面，即 a 的下标应该比 b 大。
+反之，则 a 在 b 的后面，即 a 的下标比 b 小。
+整个过程就完成了一次升序的排列。
+
+当比较函数不传时如何进行排序？
+
+答案是将数字转换为字符串，然后根据字母 unicode 值进行升序排序，也就是根据字符串的比较规则进行升序排序。

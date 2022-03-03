@@ -18,6 +18,14 @@ module.exports = {
         ]
       },
       {
+        title: '前端',
+        collapsable: false,
+        children: [
+          '/frontend/fr1.md',
+          '/frontend/fr2.md'
+        ]
+      },
+      {
         title: '深入浅出',
         collapsable: false,
         children: [
@@ -28,13 +36,7 @@ module.exports = {
           '/new/new5'
         ]
       },
-      {
-        title: '前端',
-        collapsable: false,
-        children: [
-          '/frontend/fr1.md'
-        ]
-      }
+
     ]
   }
 }
