@@ -24,6 +24,7 @@ module.exports = {
           '/frontend/fr1.md',
           '/frontend/fr22.md',
           '/frontend/fr2.md',
+          '/frontend/fr03.md',
           '/frontend/fr3.md',
           '/frontend/fr4.md',
           '/frontend/fr5.md',
