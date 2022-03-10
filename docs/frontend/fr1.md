@@ -2,11 +2,9 @@
 title: 手写代码
 ---
 
-### JS 手写代码
+## 防抖与节流
 
-#### 防抖与节流
-
-##### 防抖 (debounce)
+### 防抖 (debounce)
 
 将多次高频操作优化为只在最后一次执行
 使用场景：用户输入，只需在输入完成后做一次输入校验即可
@@ -28,7 +26,7 @@ title: 手写代码
  debounced()
 ```
 
-##### 节流(throttle):
+### 节流(throttle):
 
 每隔一段时间后执行一次
 使用场景: 滚动条事件 或者 resize 事件，通常每隔 100~500 ms 执行一次即可。
@@ -50,7 +48,7 @@ function throttle(fn, delay){
  throttled()
 ```
 
-#### 手写 AJAX
+## 手写 AJAX
 
 ajax 是一种异步通信的方法,从服务端获取数据,达到局部刷新页面的效果。
 
@@ -76,9 +74,9 @@ const ajax = (method, url, data, success, fail) => {
 }
 ```
 
-#### 深拷贝、浅拷贝
+## 深拷贝、浅拷贝
 
-##### 浅拷贝
+### 浅拷贝
 
 以赋值的形式拷贝引用对象，仍指向同一个地址，修改时原对象也会受到影响
 
@@ -95,7 +93,7 @@ function shallowClone(obj){
 }
 ```
 
-##### 深拷贝
+### 深拷贝
 
 完全拷贝一个新对象，修改时原对象不再受到任何影响
 
@@ -122,7 +120,7 @@ function deepClone(obj){
 }
 ```
 
-#### 数组去重
+## 数组去重
 
 - 使用 Set
 - 利用 for 嵌套 for，然后 splice 去重
@@ -218,7 +216,7 @@ function unique (arr) {
 }
 ```
 
-#### 数组扁平化
+## 数组扁平化
 
 - 调用 ES6 中的 flat 方法
 - 利用 reduce 函数迭代
@@ -255,47 +253,4 @@ function flatten (ary) {
     }
   }
 }
-```
-
-#### 手写 Promise
-
-```
-function myPromise(constructor){
-  let self=this;
-  self.status="pending" //定义状态改变前的初始状态
-  self.value=undefined;//定义状态为resolved的时候的状态
-  self.reason=undefined;//定义状态为rejected的时候的状态
-
-  function resolve(value){
-    //两个==="pending"，保证了了状态的改变是不不可逆的
-    if(self.status==="pending"){
-      self.value=value;
-      self.status="resolved";
-    }
-  }
-  function reject(reason){
-     //两个==="pending"，保证了了状态的改变是不不可逆的
-     if(self.status==="pending"){
-        self.reason=reason;
-        self.status="rejected";
-      }
-  }
-  //捕获构造异常
-  try{
-      constructor(resolve,reject);
-  }catch(e){
-    reject(e);
-    } }
-
-myPromise.prototype.then=function(onFullfilled,onRejected){
-  let self=this;
-  switch(self.status){
-    case "resolved": onFullfilled(self.value); break;
-    case "rejected": onRejected(self.reason); break;
-    default:
-  }
-}
-// 测试
-var p=new myPromise(function(resolve,reject){resolve(1)});
-p.then(function(x){console.log(x)})
 ```
