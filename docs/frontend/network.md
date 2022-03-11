@@ -2,9 +2,7 @@
 title: 网络
 ---
 
-### 网络
-
-#### HTTP 状态码
+## HTTP 状态码
 
 - 1xx: 表示目前是协议处理的中间状态，还需要后续操作
 - 2xx: 表示成功状态
@@ -20,7 +18,7 @@ title: 网络
 404 资源未找到
 500 服务器内部错误
 
-#### 常见的请求方法
+## 常见请求方法
 
 - GET: 通常用来获取资源
 - POST: 提交数据，即上传数据
@@ -31,7 +29,7 @@ title: 网络
 - OPTIONS: 列出可对资源实行的请求方法，用来跨域请求
 - TRACE: 追踪请求-响应的传输路径
 
-#### GET 和 POST 的区别
+## GET 和 POST 的区别
 
 > 语义
 
@@ -54,7 +52,7 @@ title: 网络
 - GET 在浏览器回退时是无害的，而 POST 会再次提交请求
 - GET 产生的 URL 地址可以被加入收藏栏，而 POST 不可以
 
-#### HTTP 1.0、1.1、2.0 的区别
+## HTTP 1.0、1.1、2.0 的区别
 
 - 1 和 1.0 相比，1.1 可以一次传输多个文件
 - http1.x 解析基于文本，http2.0 采用二进制格式，新增特性 多路复用、header 压缩、服务端推送(静态 html 资源)
@@ -77,7 +75,7 @@ title: 网络
 - 首部压缩
 - 服务端推送
 
-#### Http 和 Https 区别
+## Http 和 Https 区别
 
 - HTTP 的 URL 以 http:// 开头，而 HTTPS 的 URL 以 https:// 开头
 - HTTP 是不安全的，而 HTTPS 是安全的
@@ -86,7 +84,7 @@ title: 网络
 - HTTP 无需证书，而 HTTPS 需要 CA 机构 wosign 的颁发的 SSL 证书
 - 在 OSI 网络模型中，HTTP 工作于应用层，而 HTTPS 的安全传输机制工作在传输层
 
-#### HTTP 缓存
+## HTTP 缓存
 
 缓存策略: 可分为 强缓存 和 协商缓存
 
@@ -119,7 +117,7 @@ title: 网络
 
 > Etag 的优先级高于 Last-Modified
 
-#### TCP 三次握手
+## TCP 三次握手
 
 ![三次握手](https://i.imgur.com/j4QQU4x.png)
 建立连接前，客户端和服务端需要通过握手来确认对方
@@ -128,7 +126,7 @@ title: 网络
 - 服务端接收并确认 syn 包后发送 syn+ack 包，进入 syn_recv 状态
 - 客户端接收 syn+ack 包后，发送 ack 包，双方进入 established 状态
 
-#### TCP 四次挥手
+## TCP 四次挥手
 
 - 客户端 -- FIN --> 服务端， FIN—WAIT
 - 服务端 -- ACK --> 客户端， CLOSE-WAIT
@@ -143,7 +141,7 @@ title: 网络
 4. 第四次挥手：客户端收到 FIN 之后，一样发送一个 ACK 报文作为应答，且把服务端的序列号值 + 1 作为自己 ACK 报文的序列号值，此时客户端处于 TIME_WAIT 状态。需要过一阵子以确保服务端收到自己的 ACK 报文之后才会进入 CLOSED 状态
 5. 服务端收到 ACK 报文之后，就处于关闭连接了，处于 CLOSED 状态。
 
-#### TCP、 UDP 区别
+## TCP、 UDP 区别
 
 ![区别](https://i.imgur.com/FrK3YvC.png)
 
@@ -151,7 +149,7 @@ title: 网络
 2. 虽然 `UDP` 并没有 `TCP` 传输来的准确，但是也能在很多实时性要求高的地方有所作为
 3. 对数据准确性要求高，速度可以相对较慢的，可以选用`TCP`
 
-#### 浏览器本地存储各自优劣
+## 浏览器本地存储各自优劣
 
 浏览器的本地存储主要分为 Cookie、WebStorage 和 IndexDB, 其中 WebStorage 又可以分为 localStorage 和 sessionStorage。
 
@@ -174,7 +172,7 @@ title: 网络
 - localstorage：在所有同源窗口中都是共享的；也就是说只要浏览器不关闭，数据仍然存在
 - cookie: 也是在所有同源窗口中都是共享的.也就是说只要浏览器不关闭，数据仍然存在
 
-#### 跨域通信方式
+## 跨域通信方式
 
 - jsonp(利用 script 标签没有跨域限制的漏洞实现。缺点：只支持 GET 请求)
 
@@ -200,7 +198,7 @@ function jsonp(url, jsonpCallback, success) {
 - 各种嵌套 iframe 的方式，不常用
 - 日常工作中用的最对的跨域方案是 CORS 和 Nginx 反向代理
 
-#### Websocket
+## Websocket
 
 Websocket 是一个 持久化的协议， 基于 http ， 服务端可以 主动 push
 
