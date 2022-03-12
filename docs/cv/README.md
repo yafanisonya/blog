@@ -8,9 +8,6 @@ title: 简历
 
 手机：13141411566 | 微信：yafan0609 | 邮箱：yafanison@gmail.com
 
-- [个人主页](https://yafanisonya.github.io/blog/)
-- [Github](https://github.com/yafanisonya)
-
 ## 专业技能
 
 - 掌握项目常规开发流程，能够独立进行前端页面代码开发
@@ -108,7 +105,7 @@ title: 简历
 
 - ### 迷你导航
 
-  [源码链接](https://github.com/yafanisonya/nav) [项目预览](http://fanison.xyz/nav/)
+  [源码链接](https://github.com/yafanisonya/nav) [项目预览](https://yafanisonya.github.io/nav/)
 
   一个基于 **jQuery** / **JavaScript** 的单页面应用
 

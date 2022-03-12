@@ -4,8 +4,9 @@ module.exports = {
   description: 'Keep Learning, Keep Growing, Keep Succeeding',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Front-End', link: '/frontend/' },
+      { text: '首页', link: '/' },
+      { text: '前端', link: '/frontend/' },
+      { text: '学习笔记', link: 'https://yafanisonya.github.io/note/' },
       { text: 'Github', link: 'https://github.com/yafanisonya' },
     ],
     sidebar: [
