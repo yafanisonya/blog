@@ -5,7 +5,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Front-End', link: '/frontend/' },
       { text: 'Github', link: 'https://github.com/yafanisonya' },
     ],
     sidebar: [
@@ -21,7 +21,7 @@ module.exports = {
         title: '前端',
         collapsable: false,
         children: [
-          '/frontend/fr001.md',
+          '/frontend/',
           '/frontend/fr002.md',
           '/frontend/fr003.md',
           '/frontend/fr004.md',
