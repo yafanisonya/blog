@@ -29,6 +29,7 @@ module.exports = {
           '/frontend/browser.md',
           '/frontend/network.md',
           '/frontend/safety.md',
+          '/frontend/vue.md',
           '/frontend/react.md',
         ]
       },
