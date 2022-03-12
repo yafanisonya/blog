@@ -25,6 +25,7 @@ module.exports = {
           '/frontend/fr002.md',
           '/frontend/fr003.md',
           '/frontend/fr004.md',
+          '/frontend/typescript.md',
           '/frontend/webpack.md',
           '/frontend/browser.md',
           '/frontend/network.md',
