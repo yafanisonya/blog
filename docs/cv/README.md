@@ -46,29 +46,7 @@ title: 简历
 
 ## 项目经历
 
-1.  ### 小象云观网点画像
-
-    项目为网点选址、数据营销等提供多维度预测性数据, 以 React 为技术栈, 基于 Ant Design 框架
-
-    模块主要分为电子地图、城市数据展示、区域工商明细、网点数据分析等
-
-    基于高德地图 API 实现区域筛选及选址分析, 热力图辅助展示网点周边客群画像
-
-    采用 Echarts 进行数据可视化展示, 实现对网点周边综合分析与对比
-
-    与后端对接, 实现多个目标网点数据对比及报告输出功能
-
-2.  ### 小象规划+ (小程序)
-
-    项目为银行理财经理提供用户资产配置方案, 基于微信小程序原生框架
-
-    模块主要分为模式选择、客户评测、方案推荐、资产分析、模拟配置等
-
-    采用 ec-canvas 实现资产占比、收益分析、风险分析、历史净值等图表展示
-
-    封装 公共组件及 Request 接口请求, 优化代码统一数据处理，降低代码的耦合性
-
-3.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
+1.  ### Wheel UI（使用 Vue 实现的小型 UI 库）
 
     [Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)
 
@@ -84,7 +62,7 @@ title: 简历
 
     主要技术栈： **Vue3 / TypeScript / VuePress / Vue Router / Vite / SCSS / ES6 / Parcel**
 
-4.  ### 极简记账 （记账应用）
+2.  ### 极简记账 （记账应用）
 
     [ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/)
 
@@ -104,6 +82,28 @@ title: 简历
 
     React 版本技术栈：**React / React Router / 自定义 Hooks / TypeScript**
 
+3.  ### 小象云观网点画像
+
+    项目为网点选址、数据营销等提供多维度预测性数据, 以 React 为技术栈, 基于 Ant Design 框架
+
+    模块主要分为电子地图、城市数据展示、区域工商明细、网点数据分析等
+
+    基于高德地图 API 实现区域筛选及选址分析, 热力图辅助展示网点周边客群画像
+
+    采用 Echarts 进行数据可视化展示, 实现对网点周边综合分析与对比
+
+    与后端对接, 实现多个目标网点数据对比及报告输出功能
+
+4.  ### 小象规划+ (小程序)
+
+    项目为银行理财经理提供用户资产配置方案, 基于微信小程序原生框架
+
+    模块主要分为模式选择、客户评测、方案推荐、资产分析、模拟配置等
+
+    采用 ec-canvas 实现资产占比、收益分析、风险分析、历史净值等图表展示
+
+    封装 公共组件及 Request 接口请求, 优化代码统一数据处理，降低代码的耦合性
+
 ## 开源项目
 
 - ### 迷你导航
@@ -122,7 +122,7 @@ title: 简历
 
   [源码链接](https://github.com/yafanisonya/pikachu) [项目预览](https://yafanisonya.github.io/pikachu/src/test.html)
 
-  **CSS3 和动画** 制作的一个创意可爱作品
+  **CSS3、动画** 制作的一个创意可爱作品
 
 <!-- - ### 简易画板
 
