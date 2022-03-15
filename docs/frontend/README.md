@@ -298,6 +298,28 @@ var p=new myPromise(function(resolve,reject){resolve(1)});
 p.then(function(x){console.log(x)})
 ```
 
+## Promise.all
+
+```
+Promise.prototype.myAll = function(promiseList) {
+  return new Promise((resolve, reject) = >{
+    const resultList = []
+    let count = 0
+    promiseList.map((promise, index) = >{
+      promise.resolve(result = >{
+        resultList[index] = result count += 1
+        if (count >= promiseList.length) {
+          resolve(resultList)
+        }
+      },
+      (reason) = >{
+        reject(reason)
+      })
+    })
+  })
+}
+```
+
 ## 发布订阅
 
 **实现思路**
