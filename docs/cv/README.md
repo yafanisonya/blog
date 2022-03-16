@@ -49,9 +49,11 @@ title: 简历
 
     <!-- [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3) 　[ Vue2 源码 ](https://github.com/yafanisonya/wheel) -->
 
-    该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue** 的 UI 框架。
+    该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue + TypeScript** 的 UI 框架。
 
     项目分别使用 Vue3、Vue2 两个版本实现不同的组件功能。
+
+    Vue3 版本使用 setup、 onMounted、watchEffect、 ref、 computed 等 Composition API。
 
     主要组件有 Switch、Button、Dialog、Tabs、文本输入框、Toast、标签、手风琴等。
 
