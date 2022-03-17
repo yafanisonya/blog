@@ -46,7 +46,13 @@ module.exports = {
           '/new/new5'
         ]
       },
-
+      // {
+      //   title: '项目总结',
+      //   collapsable: false,
+      //   children: [
+      //     '/project/',
+      //   ]
+      // },
     ]
   }
 }

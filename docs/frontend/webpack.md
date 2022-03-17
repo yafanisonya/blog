@@ -18,25 +18,44 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 
 ## Loader
 
+- babel-loader: 把 JS / TS 变成 JS， 把 ES6 转换成 ES5
+- ts-loader: 把 TS 变成 JS，并提示类型错误
+- markdown-loader: 把 markdown 变成 html
+- html-loader: 把 html 变成 JS 字符串
+- sass-loader: 把 SASS / SCSS 变成 CSS
+- css-loader: 把 CSS 变成 JS 字符串
+- style-loader: 把 JS 字符串变成 style 标签
+- postcss-loader: 把 CSS 变成更优化的 CSS
+- vue-loader: 把单文件组件变成 JS 模块
+- thread-loader：用于多进程打包
+
+- eslint-loader：通过 ESLint 检查 JavaScript 代码
 - file-loader：把文件输出到⼀个文件夹中，在代码中通过相对 URL 去引用输出的文件
 - url-loader：和 file-loader 类似，但是能在文件很⼩的情况下以 base64 的方式把文件内容注⼊到代码中去
 - source-map-loader：加载额外的 Source Map 文件，以方便断点调试
 - image-loader：加载并且压缩图⽚文件
-- babel-loader：把 ES6 转换成 ES5
-- css-loader：加载 CSS，⽀持模块化、压缩、文件导⼊等特性
-- style-loader：把 CSS 代码注⼊到 JavaScript 中，通过 DOM 操作去加载 CSS
-- eslint-loader：通过 ESLint 检查 JavaScript 代码
 
 ## Plugin
 
+- html-webpack-plugin：用于创建 HTML 页面并自动引入 JS 和 CSS
+- clean-webpack-plugin：用于清理之前打包的残余文件
+- mini-css-extract-plugin: 用于将 JS 中的 CSS 抽离成单独的 CSS 文件
+- SplitChunksPlugin：用于代码分包
+- DllPlugin + DllReferencePlugin 用于避免大依赖被频繁重新打包，大幅降低打包时间
+
 - define-plugin：定义环境变量
-- html-webpack-plugin：简化 html 文件创建
 - uglifyjs-webpack-plugin：通过 UglifyES 压缩 ES6 代码
 - webpack-parallel-uglify-plugin: 多核压缩,提⾼压缩速度
 - webpack-bundle-analyzer: 可视化 webpack 输出文件的体积
-- mini-css-extract-plugin: CSS 提取到单独的文件中,⽀持按需加载
 
 ## Loader、Plugin 区别
+
+- **loader** 文件加载器
+  - 功能： 能够对文件进行编译、优化、混淆(压缩)等，比如 babel-loader / vue-loader
+  - 运行时机： 在创建最终产物之前运行
+- **plugin** webpack 插件
+  - 功能： 能实现更多功能，比如定义全局变量、Code Split、 加速编译等
+  - 运行时机： 在整个打包过程(以及前后)都能运行
 
 ### 不同的作用
 
@@ -109,14 +128,19 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 
 ## 提⾼构建速度
 
-1. 多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
+1. 使用 DllPlugin 将不常变化的代码提前打包，并复用，如 vue、react
+2. 使用 thread-loader 或 HappyPack 进行多线程打包
+3. 处于开发环境时，在 webpack config 中将 cache 设为 true
+4. 处于生产环境时，关闭不必要的环节，比如可以关闭 source map
 
-2. 通过 externals 配置来提取常⽤库
+- 多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
 
-3. 利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
+- 通过 externals 配置来提取常⽤库
 
-4. 使⽤ Happypack 实现多线程加速编译
+- 利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
 
-5. 使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。 原理上 webpack-uglify-parallel 采⽤了多核并⾏ 压缩来提升压缩速度
+- 使⽤ Happypack 实现多线程加速编译
 
-6. 使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
+- 使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。 原理上 webpack-uglify-parallel 采⽤了多核并⾏ 压缩来提升压缩速度
+
+- 使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
