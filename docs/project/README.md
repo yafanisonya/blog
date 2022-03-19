@@ -157,3 +157,64 @@ export default{
   }
 }
 ```
+
+## 使用 JS 获取插槽内容
+
+**const defaluts = context.slots.default()**
+
+```
+<Tabs v-model:selected="x">
+  <Tab title="导航1">内容1</Tab>
+  <Tab title="导航2">内容2</Tab>
+</Tabs>
+
+
+import Tab from './Tab.vue'
+export default{
+  setup(props, context){
+    const defaults = context.slots.default()
+    console.log( defaults[0].type)
+
+    defaults.forEach((tag) => {
+      // @ts-ignore
+      if (tag.type.name !== Tab.name) {
+        throw new Error("Tabs 子标签必须是 Tab");
+      }
+    });
+  }
+}
+```
+
+## TypeScript 泛型
+
+```
+<div ref="container">
+  <div :ref="el => { if (t===selected) selectedItem = el }"></div>
+  <div ref="indicator"></div>
+</div>
+
+const container = ref<HTMLDivElement>(null);
+const selectedItem = ref<HTMLDivElement>(null);
+const indicator = ref<HTMLDivElement>(null);
+```
+
+## watchEffect
+
+> 立即执行传入的一个函数，同时响应式追踪其依赖，并在其依赖变更时重新运行该函数。
+
+- 获取宽高和位置 const {width,height}=el.getBoundingClientRect()
+
+```
+watchEffect(
+  () => {
+    const { width } = selectedItem.value.getBoundingClientRect();
+    indicator.value.style.width = width + "px";
+
+    <!-- ES6 析构赋值重命名语法 div -->
+    const { left: left1 } = container.value.getBoundingClientRect();
+    const { left: left2 } = selectedItem.value.getBoundingClientRect();
+    const left = left2 - left1;
+    indicator.value.style.left = left + "px";
+  }
+);
+```
