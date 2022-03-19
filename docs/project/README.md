@@ -218,3 +218,73 @@ watchEffect(
   }
 );
 ```
+
+## 响应式页面
+
+> 手机样式 + @media(min-width:600px) + @media(min-width:800px) + @media(min-width:1200px)
+
+## Grid 布局
+
+- grid-template-columns: 定义每一列的列宽
+- grid-template-rows: 定义每一行的行高
+- grid-template-areas: 定义区域
+
+```
+display: grid;
+justify-content: start;
+align-content: space-between;
+grid-template-areas: "icon title" "icon text";
+grid-template-rows: 1fr auto;
+grid-template-columns: 80px auto;
+```
+
+## 圆弧
+
+```
+background: linear-gradient(
+  145deg,
+  rgba(227, 255, 253, 1) 0%,
+  rgba(183, 233, 230, 1) 100%
+);
+// 实现圆弧
+clip-path: ellipse(80% 60% at 50% 40%);
+```
+
+## 高亮源代码
+
+> 使用 prismjs 和 v-html
+
+```
+<pre
+  class="language-html"
+  v-html="html"
+/>
+
+import "prismjs";
+import "prismjs/themes/prism.css";
+const Prism = (window as any).Prism;
+
+setup() {
+  const html = computed(() => {
+    return Prism.highlight(
+      props.component.__sourceCode,
+      Prism.languages.html,
+      "html"
+    );
+  });
+}
+```
+
+## 引入 Github Markdown 样式
+
+> 使用 github-markdown-css
+
+```
+// 引入
+import 'github-markdown-css'
+
+// 添加 class
+<template>
+  <article class="mardown-body"></article>
+</template>
+```
