@@ -10,6 +10,7 @@ module.exports = {
         text: '项目总结',
         items: [
           { text: 'Vue3 Wheel', link: '/project/' },
+          { text: 'React Money', link: '/project/morney.md' },
           { text: 'Vue Money', link: 'https://yafanisonya.github.io/note/money/note.html' }
         ]
       },
