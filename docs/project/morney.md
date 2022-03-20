@@ -77,3 +77,71 @@ const Wrapper = styled.section`
 
 - yarn add react-router-dom
 - yarn add --dev @types/react-router-dom
+
+## webpack 引入 svg-sprite-loader
+
+> create-react-app 安装以后，没有 webpack 相关的配置的目录，通过 yarn eject 进行自定义配置
+
+**svg 雪碧图**:利用 svg 的 symbol 元素，将每个 icon 包括在 symbol 中，通过 use 元素使用该 symbol.
+
+**原理**
+
+- symbol + use:xlink:href
+- svg-sprite-loader 生成雪碧图
+- require.context 动态引入所有文件
+
+**如何配置**
+
+```
+{
+  test: /\.svg$/,
+  use: [
+    { loader: 'svg-sprite-loader', options: {} },
+    {
+      loader: 'svgo-loader', options: {
+        plugins: [
+          { removeAttrs: { attrs: 'fill' } }
+        ]
+      }
+    }
+  ]
+},
+```
+
+**如何使用**
+
+```
+// 引入单个
+require('icons/money.svg')
+
+<svg>
+  <use xlinkHref="#money">
+</svg>
+
+// 引入多个
+import React from 'react';
+import cs from 'classnames';
+
+let importAll = (requireContext: __WebpackModuleApi.RequireContext) =>
+	requireContext.keys().forEach(requireContext);
+try {
+	importAll(require.context('icons', true, /\.svg$/));
+} catch (error) {
+	console.log(error);
+}
+
+type Props = {
+	name?: string;
+} & React.SVGAttributes<SVGElement>
+
+const Icon = (props: Props) => {
+	const {name, children, className, ...rest} = props
+	return (
+		<svg className={cs('icon',className)} {...rest}>
+			{props.name && <use xlinkHref={'#' + props.name}></use>}
+		</svg>
+	);
+};
+
+export default Icon;
+```
