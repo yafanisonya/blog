@@ -10,15 +10,13 @@ title: 简历
 
 ## 专业技能
 
-- 掌握项目常规开发流程，能够独立进行前端页面代码开发
-- 熟悉 HTML5、 CSS3, 确保代码符合前端规范，具有像素级还原设计稿的能力
-- 熟悉 JavaScript、 ES6+ 语法, 具有 TypeScript / Less / Sass 等扩展语言开发经验
-- 熟悉 Vue 常用功能，能够使用 Vue 全家桶进行开发,包括 VueCli、VueRouter、Vuex 等
-- 熟悉微信小程序从开发到发布全流程, 独立承担从零到一小程序开发
-- 熟悉 React 框架，理解重要概念(生命周期、异步更新、常用 hook、单项数据流)
-- 熟练使用 Ant Design / Element 等 UI 框架完成业务组件，具有相关项目经验
-- 熟练使用 Git 进行版本控制和代码托管, Markdown 编写技术文档
-- 熟悉前端工程化构建流程，使用 Webpack / Parcel 等打包工具
+- 掌握项目常规开发流程，能够独立开发前端页面
+- 熟悉 HTML5、 CSS3，确保代码规范，具有像素级还原设计稿的能力
+- 熟悉 JavaScript、 ES6+ 语法，具有 TypeScript / Less / Sass 等扩展语言开发经验
+- 熟练使用 Vue 及 Vue 全家桶进行开发，包括 VueCli、VueRouter、Vuex 等
+- 熟悉微信小程序从开发到发布全流程， 独立承担从零到一小程序开发
+- 熟悉 React 框架，理解重要概念(生命周期、异步更新、组件通信、单项数据流)
+- 熟练掌握 Git、 Markdown 等工具，了解前端工程化
 
 ## 工作经历
 
@@ -47,8 +45,6 @@ title: 简历
 
     [Vue3 项目预览 ](https://yafanisonya.github.io/wheelv3-website/) 　[ Vue2 项目预览](https://yafanisonya.github.io/wheel/)
 
-    <!-- [ Vue3 源码 ](https://github.com/yafanisonya/wheelv3) 　[ Vue2 源码 ](https://github.com/yafanisonya/wheel) -->
-
     该项目是参照 Ant Design 、Element UI 等 UI 库思路，做的一款基于 **Vue + TypeScript** 的 UI 框架。
 
     项目分别使用 Vue3、Vue2 两个版本实现不同的组件功能。
@@ -65,8 +61,6 @@ title: 简历
 
     [ Vue 项目预览 ](https://yafanisonya.github.io/ledger-website/) 　[ React 项目预览 ](https://yafanisonya.github.io/react_morney_website/)
 
-    <!-- [ Vue 源码 ](https://github.com/yafanisonya/ledger)　 　[ React 源码](https://github.com/yafanisonya/react_morney) -->
-
     一个移动端记账应用，包含**标签、记账、统计** 等页面，实现了记账、标签管理、查看收支详情等功能
 
     使用 **Vue** 、 **React** 分别实现了一遍，让自己熟悉两个常用框架的使用
@@ -75,7 +69,7 @@ title: 简历
 
     通过 Vuex、 自定义 Hooks 实现组件数据的**状态管理**, 使用 LocalStorage 实现数据**本地储存**
 
-    在实现过程中遇到了很多 Webpack、TypeScript、 Hooks API 方面的问题，并将解决的过程记录在[个人博客]。
+    在实现过程中遇到了很多 Webpack、TypeScript、 Hooks API 方面的问题，并将解决的过程记录在个人博客。
 
     Vue 版本技术栈：**Vue / Vue Router / Vuex / TypeScript**
 
@@ -107,7 +101,7 @@ title: 简历
 
 - ### 迷你导航
 
-  [源码链接](https://github.com/yafanisonya/nav) [项目预览](https://yafanisonya.github.io/nav/)
+  [项目预览](https://yafanisonya.github.io/nav/)
 
   一个基于 **jQuery** / **JavaScript** 的单页面应用
 
@@ -119,12 +113,6 @@ title: 简历
 
 - ### 会动的皮卡丘
 
-  [源码链接](https://github.com/yafanisonya/pikachu) [项目预览](https://yafanisonya.github.io/pikachu/src/test.html)
+  [项目预览](https://yafanisonya.github.io/pikachu/src/test.html)
 
   **CSS3、动画** 制作的一个创意可爱作品
-
-<!-- - ### 简易画板
-
-  [源码链接](https://github.com/yafanisonya/canvas-demo) [项目预览](http://fanison.xyz/canvas-demo/)
-
-  我在学习 **Canvas** 时做的一个小作品 -->

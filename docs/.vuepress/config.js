@@ -6,6 +6,13 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '前端', link: '/frontend/' },
+      {
+        text: '项目总结',
+        items: [
+          { text: 'Vue3 Wheel', link: '/project/' },
+          { text: 'Vue Money', link: 'https://yafanisonya.github.io/note/money/note.html' }
+        ]
+      },
       { text: '学习笔记', link: 'https://yafanisonya.github.io/note/' },
       { text: 'Github', link: 'https://github.com/yafanisonya' },
     ],
@@ -46,13 +53,13 @@ module.exports = {
           '/new/new5'
         ]
       },
-      // {
-      //   title: '项目总结',
-      //   collapsable: false,
-      //   children: [
-      //     '/project/',
-      //   ]
-      // },
+      {
+        title: '项目总结',
+        collapsable: false,
+        children: [
+          '/project/',
+        ]
+      },
     ]
   }
 }
