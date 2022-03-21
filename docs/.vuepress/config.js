@@ -47,6 +47,7 @@ module.exports = {
         title: '深入浅出',
         collapsable: false,
         children: [
+          '/new/',
           '/new/new1',
           '/new/new2',
           '/new/new3',
