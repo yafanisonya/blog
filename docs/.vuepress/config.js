@@ -62,6 +62,13 @@ module.exports = {
           '/project/morney.md',
         ]
       },
+      {
+        title: '知识点补充',
+        collapsable: false,
+        children: [
+          '/question/',
+        ]
+      },
     ]
   }
 }
