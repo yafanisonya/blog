@@ -301,20 +301,17 @@ p.then(function(x){console.log(x)})
 ## Promise.all
 
 ```
-Promise.prototype.myAll = function(promiseList) {
-  return new Promise((resolve, reject) = >{
-    const resultList = []
-    let count = 0
-    promiseList.map((promise, index) = >{
-      promise.resolve(result = >{
-        resultList[index] = result count += 1
-        if (count >= promiseList.length) {
-          resolve(resultList)
-        }
-      },
-      (reason) = >{
-        reject(reason)
-      })
+Promise.prototype.myAll
+Promise.myAll = function(list){
+  const results = []
+  let count = 0
+  return new Promise((resolve,reject) =>{
+    list.map((item, index)=> {
+      item.then(result=>{
+          results[index] = result
+          count += 1
+          if (count >= list.length) { resolve(results)}
+      }, reason => reject(reason) )
     })
   })
 }

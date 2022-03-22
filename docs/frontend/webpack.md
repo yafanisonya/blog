@@ -16,7 +16,7 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 
 在以上过程中，Webpack 会在特定的时间点⼴播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并 且插件可以调用 Webpack 提供的 API 改变 Webpack 的运行结果。
 
-## Loader
+## 常见 Loader
 
 - babel-loader: 把 JS / TS 变成 JS， 把 ES6 转换成 ES5
 - ts-loader: 把 TS 变成 JS，并提示类型错误
@@ -29,13 +29,7 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 - vue-loader: 把单文件组件变成 JS 模块
 - thread-loader：用于多进程打包
 
-- eslint-loader：通过 ESLint 检查 JavaScript 代码
-- file-loader：把文件输出到⼀个文件夹中，在代码中通过相对 URL 去引用输出的文件
-- url-loader：和 file-loader 类似，但是能在文件很⼩的情况下以 base64 的方式把文件内容注⼊到代码中去
-- source-map-loader：加载额外的 Source Map 文件，以方便断点调试
-- image-loader：加载并且压缩图⽚文件
-
-## Plugin
+## 常见 Plugin
 
 - html-webpack-plugin：用于创建 HTML 页面并自动引入 JS 和 CSS
 - clean-webpack-plugin：用于清理之前打包的残余文件
@@ -43,10 +37,9 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 - SplitChunksPlugin：用于代码分包
 - DllPlugin + DllReferencePlugin 用于避免大依赖被频繁重新打包，大幅降低打包时间
 
-- define-plugin：定义环境变量
-- uglifyjs-webpack-plugin：通过 UglifyES 压缩 ES6 代码
-- webpack-parallel-uglify-plugin: 多核压缩,提⾼压缩速度
-- webpack-bundle-analyzer: 可视化 webpack 输出文件的体积
+- eslint-webpack-plugin 用于检查代码中的错误
+- DefinePlugin 用于在 webpack config 里添加全局变量
+- copy-webpack-plugin 用于拷贝静态文件到 dist
 
 ## Loader、Plugin 区别
 
@@ -68,6 +61,120 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 - **Loader**在 module.rules 中配置，也就是说他作为模块的解析规则而存在。 类型为数组，每⼀项都是⼀ 个 Object ，里面描述了对于什么类型的文件（ test ），使用什么加载( loader )和使用的参数（ options ）
 
 - **Plugin**在 plugins 中单独配置。 类型为数组，每⼀项是⼀个 plugin 的实例，参数都通过构造函数传⼊。
+
+## 解决跨域
+
+在开发时，页面在 localhost:8080，JS 直接访问后端接口（ http://localhost:3000）会报跨域错误。
+为了解决这个问题，可以在 webpack.config.js 中添加如下配置：
+
+```
+module.exports = {
+  //...
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
+  },
+};
+```
+
+- 在 JS 中请求 /api/users 就会自动被代理到 http://localhost:3000/api/users
+- 希望请求中的 Origin 从 8080 修改为 http://localhost:3000，可以添加 changeOrigin: true
+- 如果要访问的是 HTTPS API，那么就需要配置 HTTPS 证书，否则会报错
+- 在 target 下面添加 secure: false ，就可以不配置证书且忽略 HTTPS 报错
+
+## 提高构建速度
+
+1. 使用 DllPlugin 将不常变化的代码提前打包，并复用，如 vue、react
+2. 使用 thread-loader 或 HappyPack 进行多线程打包
+3. 处于开发环境时，在 webpack config 中将 cache 设为 true
+4. 处于生产环境时，关闭不必要的环节，比如可以关闭 source map
+
+## swc、esbuild
+
+### swc
+
+- 实现语言：Rust
+
+- 功能：编译 JS/TS、打包 JS/TS
+
+- 优势：比 babel 快很多很多很多（20 倍以上）
+
+- 能否集成进 webpack：能
+
+- 使用者：Next.js、Parcel、Deno、Vercel、ByteDance、Tencent、Shopify……
+
+- 做不到：
+
+  - 对 TS 代码进行类型检查（用 tsc 可以）
+  - 打包 CSS、SVG
+
+### esbuild
+
+- 实现语言：Go
+
+- 功能：编译 JS/TS、打包 JS/TS
+
+- 优势：比 babel 快很多很多很多很多很多很多（10~100 倍）
+
+- 能否集成进 webpack：能
+
+- 使用者：vite、vuepress、snowpack、umijs、blitz.js 等
+
+做不到：
+
+- 对 TS 代码进行类型检查
+- 打包 CSS、SVG
+
+## webpack 与 vite 的区别
+
+- 开发环境区别
+
+  - vite 自己实现 server，不对代码打包，充分利用浏览器对 `<script type=module>` 的支持
+  - webpack-dev-server 常使用 babel-loader 基于内存打包，比 vite 慢很多很多很多
+
+- 生产环境区别
+
+  - vite 使用 rollup + esbuild 来打包 JS 代码
+  - webpack 使用 babel 来打包 JS 代码，比 esbuild 慢很多很多很多
+
+- 文件处理时机
+  - vite 只会在你请求某个文件的时候处理该文件
+  - webpack 会提前打包好 main.js，等你请求的时候直接输出打包好的 JS 给你
+
+目前已知 vite 的缺点有：
+
+- 热更新常常失败，原因不清楚
+- 有些功能 rollup 不支持，需要自己写 rollup 插件
+- 不支持非现代浏览器
+
+## 配置多页应用
+
+> webpack config
+
+```
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: {
+    app: './src/app.js',
+    admin: './src/admin.js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      chunks: ['app']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'admin.html',
+      chunks: ['admin']
+    })
+  ],
+};
+```
 
 ## webpack、grunt、gulp 区别
 
@@ -125,22 +232,3 @@ Webpack 的运行流程是⼀个串行的过程，从启动到结束会依次执
 - 利⽤缓存: webpack.cache 、babel-loader.cacheDirectory、 HappyPack.cache 都可以利⽤缓存提⾼ rebuild 效率
 
 - 缩⼩⽂件搜索范围: ⽐如 babel-loader 插件,如果你的⽂件仅存在于 src 中,那么可以 include: path.resolve(\_\_dirname, 'src') ,当然绝⼤多数情况下这种操作的提升有限,除⾮不⼩⼼ build 了 node_modules ⽂件
-
-## 提⾼构建速度
-
-1. 使用 DllPlugin 将不常变化的代码提前打包，并复用，如 vue、react
-2. 使用 thread-loader 或 HappyPack 进行多线程打包
-3. 处于开发环境时，在 webpack config 中将 cache 设为 true
-4. 处于生产环境时，关闭不必要的环节，比如可以关闭 source map
-
-- 多⼊⼝情况下，使⽤ CommonsChunkPlugin 来提取公共代码
-
-- 通过 externals 配置来提取常⽤库
-
-- 利⽤ DllPlugin 和 DllReferencePlugin 预编译资源模块 通过 DllPlugin 来对那些我们引⽤但是绝对不会修改的 npm 包来进⾏预编译，再通过 DllReferencePlugin 将预编译的模块加载进来。
-
-- 使⽤ Happypack 实现多线程加速编译
-
-- 使⽤ webpack-uglify-parallel 来提升 uglifyPlugin 的压缩速度。 原理上 webpack-uglify-parallel 采⽤了多核并⾏ 压缩来提升压缩速度
-
-- 使⽤ Tree-shaking 和 Scope Hoisting 来剔除多余代码
