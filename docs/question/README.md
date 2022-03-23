@@ -137,3 +137,20 @@ Object.assign(this.$data, this.$options.data())
 // 重置 data 中的某一个对象或者属性：
 this.form = this.$options.data().form
 ```
+
+## Vue、 React 区别
+
+**数据流**
+
+- React 推崇函数式编程（纯组件），数据不可变以及单向数据流
+- Vue 是响应式的，也就是基于是数据可变的，当属性变化的时候，响应式的更新对应的虚拟 dom
+
+**响应式原理**
+
+- React: setState,当数据改变时，以组件为根目录，默认全部重新渲染
+- Vue: Vue 依赖收集，当数据改变时，自动找到引用组件重新渲染
+
+**组件写法差异**
+
+- React: JSX + inline style
+- Vue: template 的单文件组件
