@@ -4,7 +4,7 @@ title: JS 补充
 
 # JavaScript
 
-## all、apply 执行效率
+## call、apply 执行效率
 
 ```
 function callTest() { console.log(this); }
