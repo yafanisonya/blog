@@ -53,8 +53,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式 + 库
 - Action：用于提交 mutation，而不是直接变更状态，可以包含任意异步操作。
 - Module：允许将单一的 Store 拆分为多个 store 且同时保存在单一的状态树中。
 
-> Mutation 和 Action 为什么要分开？
-> 为了让代码更易于维护
+> Mutation 和 Action 分开原因：为了让代码更易于维护
 
 ## VueRouter
 

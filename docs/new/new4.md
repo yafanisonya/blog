@@ -36,7 +36,6 @@ const h: symbol = Symbol()
 const foo1: object = function(){}
 
 const foo2: { foo: number, bar: string} = { foo: 123, bar: 'string'}
-
 ```
 
 ##### 数组类型
@@ -45,7 +44,6 @@ const foo2: { foo: number, bar: string} = { foo: 123, bar: 'string'}
 const arr1: Array<number> = [1, 2, 3]
 
 const arr2: number[] = [1, 2, 3]
-
 ```
 
 ##### 元组 Tuple
@@ -82,7 +80,6 @@ function func1(a: number, b: number): string{
 const func2: (a: number, b: number) => string = function(a: number, b:number): string{
   return 'func2'
 }
-
 ```
 
 ##### 任意类型
@@ -91,7 +88,6 @@ const func2: (a: number, b: number) => string = function(a: number, b:number): s
 function stringify(value: any){
   return JSON.stringify(value)
 }
-
 ```
 
 ##### 隐式类型推断
@@ -149,13 +145,13 @@ class Person {
   age: number
 
   constructor(name: string, age: number){
-  this.name = name
-  this.age = age
-}
+    this.name = name
+    this.age = age
+  }
 
-sayHi(msg: string): void{
-  console.log('name and msg',name,msg)
-}
+  sayHi(msg: string): void{
+    console.log('name and msg',name,msg)
+  }
 }
 ```
 
